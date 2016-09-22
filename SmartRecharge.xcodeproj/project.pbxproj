@@ -13,6 +13,8 @@
 		B0ED90151D93DF0D005C4A99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0ED90141D93DF0D005C4A99 /* Assets.xcassets */; };
 		B0ED90181D93DF0D005C4A99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0ED90161D93DF0D005C4A99 /* LaunchScreen.storyboard */; };
 		B0ED90201D93E2A2005C4A99 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B0ED901F1D93E2A2005C4A99 /* .gitignore */; };
+		B0ED90231D93E3A0005C4A99 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = B0ED90211D93E3A0005C4A99 /* tessdata */; };
+		B0ED90241D93E3A0005C4A99 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ED90221D93E3A0005C4A99 /* TesseractOCR.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		B0ED90171D93DF0D005C4A99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0ED90191D93DF0D005C4A99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0ED901F1D93E2A2005C4A99 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		B0ED90211D93E3A0005C4A99 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		B0ED90221D93E3A0005C4A99 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0ED90241D93E3A0005C4A99 /* TesseractOCR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +62,8 @@
 		B0ED900C1D93DF0D005C4A99 /* SmartRecharge */ = {
 			isa = PBXGroup;
 			children = (
+				B0ED90211D93E3A0005C4A99 /* tessdata */,
+				B0ED90221D93E3A0005C4A99 /* TesseractOCR.framework */,
 				B0ED900D1D93DF0D005C4A99 /* AppDelegate.swift */,
 				B0ED900F1D93DF0D005C4A99 /* ViewController.swift */,
 				B0ED90111D93DF0D005C4A99 /* Main.storyboard */,
@@ -127,6 +134,7 @@
 			files = (
 				B0ED90201D93E2A2005C4A99 /* .gitignore in Resources */,
 				B0ED90181D93DF0D005C4A99 /* LaunchScreen.storyboard in Resources */,
+				B0ED90231D93E3A0005C4A99 /* tessdata in Resources */,
 				B0ED90151D93DF0D005C4A99 /* Assets.xcassets in Resources */,
 				B0ED90131D93DF0D005C4A99 /* Main.storyboard in Resources */,
 			);
@@ -255,6 +263,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SmartRecharge",
+				);
 				INFOPLIST_FILE = SmartRecharge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.iOSHub.SmartRecharge;
@@ -266,6 +278,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SmartRecharge",
+				);
 				INFOPLIST_FILE = SmartRecharge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.iOSHub.SmartRecharge;
