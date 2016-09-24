@@ -11,22 +11,22 @@ import Foundation
 
 
 protocol OCRManager {
-    static func performImageRecognition(image:UIImage,completion:(result:String)->())
+    static func performImageRecognition(_ image:UIImage,completion:(_ result:String)->())
 }
 
 
 
 struct TesseractManager:OCRManager {
     
-    static func performImageRecognition(image: UIImage,completion:(result:String)->()) {
+    static func performImageRecognition(_ image: UIImage,completion:(_ result:String)->()) {
         let tesseract = G8Tesseract()
         tesseract.language = "eng+fra"
-        tesseract.engineMode = .TesseractCubeCombined
-        tesseract.pageSegmentationMode = .Auto
+        tesseract.engineMode = .tesseractCubeCombined
+        tesseract.pageSegmentationMode = .auto
         tesseract.maximumRecognitionTime = 60.0
         tesseract.image = image.g8_blackAndWhite()
         tesseract.recognize()
-        completion(result: tesseract.recognizedText)
+        completion(tesseract.recognizedText)
     }
     
 }

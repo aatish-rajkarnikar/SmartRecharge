@@ -136,6 +136,7 @@
 					B0ED90091D93DF0D005C4A99 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = X8YE27GARE;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -310,6 +311,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SmartRecharge/SmartRecharge-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -332,6 +334,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.iOSHub.SmartRecharge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SmartRecharge/SmartRecharge-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

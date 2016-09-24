@@ -13,12 +13,12 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBOutlet var previewView:UIView!
     @IBAction func capture(){
-        if let videoConnection = imageOutput!.connectionWithMediaType(AVMediaTypeVideo) {
-            imageOutput?.captureStillImageAsynchronouslyFromConnection(videoConnection, completionHandler: {(sampleBuffer, error) in
+        if let videoConnection = imageOutput!.connection(withMediaType: AVMediaTypeVideo) {
+            imageOutput?.captureStillImageAsynchronously(from: videoConnection, completionHandler: {(sampleBuffer, error) in
                 let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
-                let dataProvider = CGDataProviderCreateWithCFData(imageData)
-                let cgImageRef = CGImageCreateWithJPEGDataProvider(dataProvider, nil, true, .RenderingIntentDefault)
-                _ = UIImage(CGImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.Right)
+                let dataProvider = CGDataProvider(data: imageData as! CFData)
+                let cgImageRef = CGImage(jpegDataProviderSource: dataProvider!, decode: nil, shouldInterpolate: true, intent: .defaultIntent)
+                _ = UIImage(cgImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.right)
                 self.session?.stopRunning()
             })
         }
@@ -33,12 +33,12 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         session = AVCaptureSession()
         session!.sessionPreset = AVCaptureSessionPresetPhoto
         
-        let backCamera = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        let backCamera = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         let input = try! AVCaptureDeviceInput(device: backCamera)
         session?.addInput(input)
         
@@ -50,7 +50,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         previewLayer!.frame = previewView.bounds
         previewView.layer.addSublayer(previewLayer!)
