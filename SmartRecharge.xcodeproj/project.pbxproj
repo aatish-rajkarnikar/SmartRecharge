@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B00CB4481D9A368A00174E6F /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00CB4471D9A368A00174E6F /* UIImageExtension.swift */; };
+		B00CB44A1D9A6D5100174E6F /* CropperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00CB4491D9A6D5100174E6F /* CropperViewController.swift */; };
+		B00CB44F1D9D7FA300174E6F /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00CB44E1D9D7FA300174E6F /* ResultViewController.swift */; };
 		B0ED900E1D93DF0D005C4A99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED900D1D93DF0D005C4A99 /* AppDelegate.swift */; };
 		B0ED90131D93DF0D005C4A99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0ED90111D93DF0D005C4A99 /* Main.storyboard */; };
 		B0ED90151D93DF0D005C4A99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0ED90141D93DF0D005C4A99 /* Assets.xcassets */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B00CB4471D9A368A00174E6F /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		B00CB4491D9A6D5100174E6F /* CropperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropperViewController.swift; sourceTree = "<group>"; };
+		B00CB44E1D9D7FA300174E6F /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		B0ED900A1D93DF0D005C4A99 /* SmartRecharge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartRecharge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0ED900D1D93DF0D005C4A99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0ED90121D93DF0D005C4A99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +80,7 @@
 				B0ED90321D93E96C005C4A99 /* lib */,
 				B0ED90311D93E94C005C4A99 /* Support */,
 				B0ED900D1D93DF0D005C4A99 /* AppDelegate.swift */,
+				B00CB4471D9A368A00174E6F /* UIImageExtension.swift */,
 				B0ED90111D93DF0D005C4A99 /* Main.storyboard */,
 				B0ED90141D93DF0D005C4A99 /* Assets.xcassets */,
 				B0ED90161D93DF0D005C4A99 /* LaunchScreen.storyboard */,
@@ -81,6 +88,8 @@
 				B0ED90251D93E59C005C4A99 /* CameraViewController.swift */,
 				B0ED90271D93E72B005C4A99 /* OCRManager.swift */,
 				B0ED902D1D93E877005C4A99 /* SmartRecharge-Bridging-Header.h */,
+				B00CB4491D9A6D5100174E6F /* CropperViewController.swift */,
+				B00CB44E1D9D7FA300174E6F /* ResultViewController.swift */,
 			);
 			path = SmartRecharge;
 			sourceTree = "<group>";
@@ -135,7 +144,7 @@
 				TargetAttributes = {
 					B0ED90091D93DF0D005C4A99 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = X8YE27GARE;
+						DevelopmentTeam = 35XHE3HKJV;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -181,6 +190,9 @@
 				B0ED90281D93E72B005C4A99 /* OCRManager.swift in Sources */,
 				B0ED900E1D93DF0D005C4A99 /* AppDelegate.swift in Sources */,
 				B0ED90261D93E59C005C4A99 /* CameraViewController.swift in Sources */,
+				B00CB4481D9A368A00174E6F /* UIImageExtension.swift in Sources */,
+				B00CB44A1D9A6D5100174E6F /* CropperViewController.swift in Sources */,
+				B00CB44F1D9D7FA300174E6F /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +310,7 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 35XHE3HKJV;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -322,6 +335,7 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 35XHE3HKJV;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
