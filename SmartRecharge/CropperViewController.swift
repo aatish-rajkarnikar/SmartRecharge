@@ -66,7 +66,8 @@ class CropperViewController: UIViewController, UIScrollViewDelegate {
             print(img.size)
             TesseractManager.performImageRecognition(img, completion: { (result:String) in
                 print(result)
-                let resultViewController = storyboard?.instantiateViewController(withIdentifier: "Result") as! ResultViewController
+                let storyboard = UIStoryboard.mainStoryboard()
+                let resultViewController:ResultViewController = storyboard.instantiateViewController()
                 resultViewController.previewImage = img
                 resultViewController.previewText = result
                 self.present(resultViewController, animated: true, completion: nil)

@@ -27,7 +27,8 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                 var takenImage = UIImage(data: imageData!)
                 takenImage = self.fixOrientationOfImage(image: takenImage!)
                 print(takenImage?.imageOrientation.rawValue)
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "Cropper") as! CropperViewController
+                let storyboard = UIStoryboard.mainStoryboard()
+                let vc:CropperViewController = storyboard.instantiateViewController()
                 vc.image = takenImage
                 self.present(vc, animated: true, completion: nil)
 //                let outputRect = self.previewLayer?.metadataOutputRectOfInterest(for: self.previewLayer!.bounds)

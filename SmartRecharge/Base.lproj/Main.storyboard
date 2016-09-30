@@ -9,7 +9,7 @@
         <!--Camera View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CameraViewController" customModule="SmartRecharge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CameraViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="CameraViewController" customModule="SmartRecharge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -53,7 +53,7 @@
         <!--Cropper View Controller-->
         <scene sceneID="4dR-6s-ka1">
             <objects>
-                <viewController storyboardIdentifier="Cropper" id="sHJ-wx-Bt6" customClass="CropperViewController" customModule="SmartRecharge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CropperViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sHJ-wx-Bt6" customClass="CropperViewController" customModule="SmartRecharge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pNr-qk-yta"/>
                         <viewControllerLayoutGuide type="bottom" id="myJ-Bn-s7i"/>
@@ -117,7 +117,7 @@
         <!--Result View Controller-->
         <scene sceneID="2Gs-bg-mtR">
             <objects>
-                <viewController storyboardIdentifier="Result" id="mgw-gb-7aV" customClass="ResultViewController" customModule="SmartRecharge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mgw-gb-7aV" customClass="ResultViewController" customModule="SmartRecharge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rkG-2b-hT0"/>
                         <viewControllerLayoutGuide type="bottom" id="1Pm-wz-1gl"/>
