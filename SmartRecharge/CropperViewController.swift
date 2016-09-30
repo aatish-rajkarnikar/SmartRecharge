@@ -17,18 +17,17 @@ class CropperViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     @IBOutlet var imageView:UIImageView!
-    @IBOutlet var cropAreaView:UIView!
+    @IBOutlet var cropAreaView:UIView!{
+        didSet{
+            cropAreaView.layer.borderColor = UIColor.red.cgColor
+            cropAreaView.layer.borderWidth = 1.0
+        }
+    }
     
     var image:UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = image
-        print("width \(image?.size.width) height \(image?.size.height)")
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
@@ -46,30 +45,14 @@ class CropperViewController: UIViewController, UIScrollViewDelegate {
             let visibleRect = CGRect(x: x, y: y, width: cropAreaView.frame.size.width * scale * factor, height: cropAreaView.frame.size.height * scale * factor)
             let cgImg = image.cgImage?.cropping(to: visibleRect)
             
-//            let imageRect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
-//            let previewBounds = CGRect(x: <#T##CGFloat#>, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>)
-//            let imageCoordinate = self.frameForImage(image: image, inImageView: imageView)
-//            let imageViewFrame = imageView.frame
-//            
-//            let imageBoundsWithView = CGRect(x: imageCoordinate.origin.x + imageViewFrame.origin.x, y: imageCoordinate.origin.y + imageViewFrame.origin.y, width: imageCoordinate.width, height: imageCoordinate.height)
-//            
-//            let offset = scrollView.contentOffset
-//            
-//            let zoomedImageBounds = CGRect(x: imageBoundsWithView.origin.x - offset.x, y: imageBoundsWithView.origin.y - offset.y, width: imageBoundsWithView.width, height: imageBoundsWithView.height)
-//            
-//            let scaleFactor = imageView.image!.size.width/zoomedImageBounds.size.width
-//            
-//            let cropperFrame = CGRect(x: (view.frame.origin.x - zoomedImageBounds.origin.x) * scaleFactor, y: (view.frame.origin.y - zoomedImageBounds.origin.y) * scaleFactor, width: view.frame.size.width * scaleFactor, height: view.frame.size.height * scaleFactor)
-//            
-//            let cgImg = image.cgImage?.cropping(to: cropperFrame)
             let img = scaleImage(image: UIImage(cgImage: cgImg!), maxDimension: 640)
-            print(img.size)
+
             TesseractManager.performImageRecognition(img, completion: { (result:String) in
                 print(result)
                 let storyboard = UIStoryboard.mainStoryboard()
                 let resultViewController:ResultViewController = storyboard.instantiateViewController()
                 resultViewController.previewImage = img
-                resultViewController.previewText = result
+                resultViewController.previewText = result.trimmingCharacters(in: .whitespacesAndNewlines)
                 self.present(resultViewController, animated: true, completion: nil)
             })
             

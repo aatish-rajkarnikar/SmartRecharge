@@ -13,13 +13,7 @@ import CoreImage
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var previewView:UIView!
-    @IBOutlet var previewImageView:UIImageView!
-    @IBOutlet var boundaryRectView:UIView!{
-        didSet{
-            boundaryRectView.layer.borderColor = UIColor.red.cgColor
-            boundaryRectView.layer.borderWidth = 1
-        }
-    }
+    
     @IBAction func capture(){
         if let videoConnection = imageOutput!.connection(withMediaType: AVMediaTypeVideo) {
             imageOutput?.captureStillImageAsynchronously(from: videoConnection, completionHandler: {(sampleBuffer, error) in

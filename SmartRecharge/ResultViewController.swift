@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class ResultViewController: UIViewController {
     
@@ -19,26 +20,35 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         previewImageView.image = previewImage
         previewTextfield.text = previewText
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func recharge(){
-        
+        sendSMS(recipients: ["90012"], body: previewText!)
+    }
+    
+    func sendSMS(recipients:[String],body:String) {
+        let messageVC = MFMessageComposeViewController()
+        messageVC.body = body
+        messageVC.recipients = recipients
+        messageVC.messageComposeDelegate = self
+        present(messageVC, animated: true, completion: nil)
     }
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension ResultViewController: MFMessageComposeViewControllerDelegate{
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        switch result {
+        case .cancelled :
+            print("message canceled")
+            
+        case .failed :
+            print("message failed")
+            
+        case .sent :
+            print("message sent")
+            
+        }
+        controller.dismiss(animated: true, completion: nil)
     }
-    */
-
 }

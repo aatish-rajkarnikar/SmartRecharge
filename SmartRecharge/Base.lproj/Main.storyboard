@@ -79,7 +79,7 @@
                                 </connections>
                             </scrollView>
                             <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="knz-oH-sUV">
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="knz-oH-sUV" secondAttribute="height" multiplier="343:73" id="joF-BC-2fR"/>
                                 </constraints>
@@ -138,6 +138,9 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8i-qr-XKj">
                                 <state key="normal" title="Recharge"/>
+                                <connections>
+                                    <action selector="recharge" destination="mgw-gb-7aV" eventType="touchUpInside" id="7vF-sd-MHN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
