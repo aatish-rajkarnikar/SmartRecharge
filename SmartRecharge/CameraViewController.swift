@@ -24,22 +24,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                 let storyboard = UIStoryboard.mainStoryboard()
                 let vc:CropperViewController = storyboard.instantiateViewController()
                 vc.image = takenImage
-                self.present(vc, animated: true, completion: nil)
-//                let outputRect = self.previewLayer?.metadataOutputRectOfInterest(for: self.previewLayer!.bounds)
-//                let takenCGImage = takenImage?.cgImage
-//                let width = takenCGImage?.width
-//                let height = takenCGImage?.height
-//                let originX = outputRect!.origin.x
-//                let originY = outputRect!.origin.y
-//                
-//                let factorW = CGFloat(width!)/self.previewImageView.frame.width
-//                let factorH = CGFloat(height!)/self.boundaryRectView.frame.height
-//                
-//                let cropRect = CGRect(x:  originX * CGFloat(width!), y: originY * CGFloat(height!), width: outputRect!.size.width * CGFloat(width!), height: factorW * self.boundaryRectView.frame.width )
-//                let cropImage = takenCGImage?.cropping(to: cropRect)
-//                takenImage = UIImage(cgImage: cropImage!, scale: 1, orientation: (takenImage?.imageOrientation)!)
-//                
-//                self.previewImageView.image = takenImage
+                self.present(vc, animated: false, completion: nil)
                 self.session?.stopRunning()
             })
         }

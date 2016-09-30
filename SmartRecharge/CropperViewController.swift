@@ -52,11 +52,15 @@ class CropperViewController: UIViewController, UIScrollViewDelegate {
                 let storyboard = UIStoryboard.mainStoryboard()
                 let resultViewController:ResultViewController = storyboard.instantiateViewController()
                 resultViewController.previewImage = img
-                resultViewController.previewText = result.trimmingCharacters(in: .whitespacesAndNewlines)
-                self.present(resultViewController, animated: true, completion: nil)
+                resultViewController.previewText = result.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: " ", with: "")
+                self.present(resultViewController, animated: false, completion: nil)
             })
             
         }
+    }
+    
+    @IBAction func retake(){
+        self.dismiss(animated: true, completion: nil)
     }
     
     func frameForImage(image:UIImage, inImageView imageView:UIImageView)->CGRect{

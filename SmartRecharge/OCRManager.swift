@@ -20,9 +20,10 @@ struct TesseractManager:OCRManager {
     
     static func performImageRecognition(_ image: UIImage,completion:(_ result:String)->()) {
         let tesseract = G8Tesseract()
-        tesseract.language = "eng+fra"
+        tesseract.language = "eng"
+        tesseract.charWhitelist = "0123456789"
         tesseract.engineMode = .tesseractCubeCombined
-        tesseract.pageSegmentationMode = .auto
+        tesseract.pageSegmentationMode = .singleLine
         tesseract.maximumRecognitionTime = 60.0
         tesseract.image = image.g8_blackAndWhite()
         tesseract.recognize()

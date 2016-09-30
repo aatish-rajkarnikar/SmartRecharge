@@ -90,6 +90,12 @@
                                     <action selector="crop" destination="sHJ-wx-Bt6" eventType="touchUpInside" id="R2g-5b-ime"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyc-ni-OK7">
+                                <state key="normal" title="Retake"/>
+                                <connections>
+                                    <action selector="retake" destination="sHJ-wx-Bt6" eventType="touchUpInside" id="jGa-1v-HIt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -98,9 +104,11 @@
                             <constraint firstItem="myJ-Bn-s7i" firstAttribute="top" secondItem="5v1-58-0F1" secondAttribute="bottom" constant="20" id="I6x-dv-tk4"/>
                             <constraint firstItem="knz-oH-sUV" firstAttribute="centerY" secondItem="foU-5z-tCE" secondAttribute="centerY" id="NJ2-TH-5fp"/>
                             <constraint firstItem="knz-oH-sUV" firstAttribute="leading" secondItem="foU-5z-tCE" secondAttribute="leading" constant="16" id="TA8-uJ-uSJ"/>
+                            <constraint firstItem="Kyc-ni-OK7" firstAttribute="leading" secondItem="foU-5z-tCE" secondAttribute="leading" constant="16" id="VzU-2p-Wr1"/>
                             <constraint firstItem="taS-V0-pQe" firstAttribute="bottom" secondItem="myJ-Bn-s7i" secondAttribute="top" id="YNg-d0-I2w"/>
                             <constraint firstAttribute="trailing" secondItem="5v1-58-0F1" secondAttribute="trailing" constant="16" id="oNT-gA-CAX"/>
                             <constraint firstItem="taS-V0-pQe" firstAttribute="top" secondItem="foU-5z-tCE" secondAttribute="top" id="qqb-zu-L3m"/>
+                            <constraint firstItem="myJ-Bn-s7i" firstAttribute="top" secondItem="Kyc-ni-OK7" secondAttribute="bottom" constant="20" id="u4V-zF-W8v"/>
                             <constraint firstAttribute="trailing" secondItem="taS-V0-pQe" secondAttribute="trailing" id="yBZ-f2-Zds"/>
                         </constraints>
                     </view>
@@ -142,6 +150,12 @@
                                     <action selector="recharge" destination="mgw-gb-7aV" eventType="touchUpInside" id="7vF-sd-MHN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSh-20-Uy4">
+                                <state key="normal" title="Rescan"/>
+                                <connections>
+                                    <action selector="rescan" destination="mgw-gb-7aV" eventType="touchUpInside" id="RCt-jq-s2v"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -151,7 +165,9 @@
                             <constraint firstAttribute="trailing" secondItem="AKR-IO-5Ma" secondAttribute="trailing" constant="16" id="9Ym-GL-cwa"/>
                             <constraint firstAttribute="trailing" secondItem="3VN-7Z-mpH" secondAttribute="trailing" constant="16" id="BVg-9c-URE"/>
                             <constraint firstItem="AKR-IO-5Ma" firstAttribute="leading" secondItem="aC0-SJ-mYB" secondAttribute="leading" constant="16" id="Idr-yD-ByB"/>
+                            <constraint firstItem="MSh-20-Uy4" firstAttribute="centerX" secondItem="aC0-SJ-mYB" secondAttribute="centerX" id="UJf-Eq-ekH"/>
                             <constraint firstItem="3VN-7Z-mpH" firstAttribute="leading" secondItem="aC0-SJ-mYB" secondAttribute="leading" constant="16" id="cUu-4A-zIS"/>
+                            <constraint firstItem="MSh-20-Uy4" firstAttribute="top" secondItem="V8i-qr-XKj" secondAttribute="bottom" constant="8" id="ij3-Fa-fiC"/>
                             <constraint firstItem="V8i-qr-XKj" firstAttribute="centerX" secondItem="aC0-SJ-mYB" secondAttribute="centerX" id="mYf-gN-eXh"/>
                         </constraints>
                     </view>

@@ -26,6 +26,11 @@ class ResultViewController: UIViewController {
         sendSMS(recipients: ["90012"], body: previewText!)
     }
     
+    @IBAction func rescan(){
+        let cameraViewController:CameraViewController = UIStoryboard.mainStoryboard().instantiateViewController()
+        present(cameraViewController, animated: true, completion: nil)
+    }
+    
     func sendSMS(recipients:[String],body:String) {
         let messageVC = MFMessageComposeViewController()
         messageVC.body = body
