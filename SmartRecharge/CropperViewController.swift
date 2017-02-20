@@ -14,6 +14,7 @@ class CropperViewController: UIViewController, UIScrollViewDelegate {
         didSet{
             scrollView.minimumZoomScale = 1.0
             scrollView.maximumZoomScale = 10.0
+            scrollView.delegate = self
         }
     }
     @IBOutlet var imageView:UIImageView!
@@ -24,15 +25,18 @@ class CropperViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    var image:UIImage?
+    var image:UIImage?{
+        didSet{
+            imageView.image = image
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = image
     }
     
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return imageView
-    }
+    
     
     @IBAction func crop(){
         if let image = image,let imageView = imageView{
@@ -101,5 +105,9 @@ class CropperViewController: UIViewController, UIScrollViewDelegate {
         UIGraphicsEndImageContext()
         
         return scaledImage!
+    }
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView
     }
 }

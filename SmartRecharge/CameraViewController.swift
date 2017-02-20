@@ -10,9 +10,14 @@ import UIKit
 import AVFoundation
 import CoreImage
 
+protocol CameraViewControllerDelegate {
+    func cameraViewController(_ cameraViewController:CameraViewController, didCaptureImage image:UIImage)
+}
+
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var previewView:UIView!
+    var delegate:CameraViewControllerDelegate?
     
     @IBAction func capture(){
         if let videoConnection = imageOutput!.connection(withMediaType: AVMediaTypeVideo) {
@@ -20,11 +25,12 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                 let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
                 var takenImage = UIImage(data: imageData!)
                 takenImage = self.fixOrientationOfImage(image: takenImage!)
-                print(takenImage?.imageOrientation.rawValue)
-                let storyboard = UIStoryboard.mainStoryboard()
-                let vc:CropperViewController = storyboard.instantiateViewController()
-                vc.image = takenImage
-                self.present(vc, animated: false, completion: nil)
+                self.delegate?.cameraViewController(self, didCaptureImage: takenImage!)
+                
+//                let storyboard = UIStoryboard.mainStoryboard()
+//                let vc:CropperViewController = storyboard.instantiateViewController()
+//                vc.image = takenImage
+//                self.present(vc, animated: false, completion: nil)
                 self.session?.stopRunning()
             })
         }
@@ -52,7 +58,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         session?.addOutput(imageOutput)
         
         previewLayer = AVCaptureVideoPreviewLayer(session: session!)
-        
+        previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
     }
     
     override func viewDidAppear(_ animated: Bool) {
