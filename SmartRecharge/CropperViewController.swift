@@ -27,7 +27,7 @@ class CropperViewController: UIViewController, UIScrollViewDelegate {
     
     var image:UIImage?{
         didSet{
-            imageView.image = image
+            imageView?.image = image
         }
     }
 
@@ -64,7 +64,7 @@ class CropperViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func retake(){
-        self.dismiss(animated: true, completion: nil)
+        //self.dismiss(animated: true, completion: nil)
     }
     
     func frameForImage(image:UIImage, inImageView imageView:UIImageView)->CGRect{

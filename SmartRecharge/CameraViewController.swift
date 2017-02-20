@@ -17,6 +17,8 @@ protocol CameraViewControllerDelegate {
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var previewView:UIView!
+    
+    var image:UIImage?
     var delegate:CameraViewControllerDelegate?
     
     @IBAction func capture(){
@@ -25,13 +27,10 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                 let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
                 var takenImage = UIImage(data: imageData!)
                 takenImage = self.fixOrientationOfImage(image: takenImage!)
+                self.image = takenImage
                 self.delegate?.cameraViewController(self, didCaptureImage: takenImage!)
-                
-//                let storyboard = UIStoryboard.mainStoryboard()
-//                let vc:CropperViewController = storyboard.instantiateViewController()
-//                vc.image = takenImage
-//                self.present(vc, animated: false, completion: nil)
                 self.session?.stopRunning()
+                self.performSegue(withIdentifier: "ShowCropper", sender: nil)
             })
         }
     }
@@ -124,6 +123,13 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
         
         return UIImage(cgImage: CGImage)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowCropper"{
+            let cropperViewController = segue.destination as! CropperViewController
+            cropperViewController.image = self.image
+        }
     }
 }
 
