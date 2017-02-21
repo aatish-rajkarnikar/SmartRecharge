@@ -106,7 +106,6 @@
                                 <rect key="frame" x="16" y="617" width="47" height="30"/>
                                 <state key="normal" title="Retake"/>
                                 <connections>
-                                    <action selector="retake" destination="sHJ-wx-Bt6" eventType="touchUpInside" id="jGa-1v-HIt"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="ShowCamera" animates="NO" id="Mae-j2-grm"/>
                                 </connections>
                             </button>
@@ -171,7 +170,6 @@
                                 <rect key="frame" x="162" y="165" width="51" height="30"/>
                                 <state key="normal" title="Rescan"/>
                                 <connections>
-                                    <action selector="rescan" destination="mgw-gb-7aV" eventType="touchUpInside" id="RCt-jq-s2v"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="ShowCamera" animates="NO" id="oHO-Ag-jZg"/>
                                 </connections>
                             </button>
@@ -201,6 +199,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="oHO-Ag-jZg"/>
+        <segue reference="Mae-j2-grm"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -30,6 +30,7 @@ class CropperViewController: UIViewController, UIScrollViewDelegate {
             imageView?.image = image
         }
     }
+    var croppedImage:UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,23 +50,10 @@ class CropperViewController: UIViewController, UIScrollViewDelegate {
             let visibleRect = CGRect(x: x, y: y, width: cropAreaView.frame.size.width * scale * factor, height: cropAreaView.frame.size.height * scale * factor)
             let cgImg = image.cgImage?.cropping(to: visibleRect)
             
-            let img = scaleImage(image: UIImage(cgImage: cgImg!), maxDimension: 640)
-
-            TesseractManager.performImageRecognition(img, completion: { (result:String) in
-                print(result)
-                let storyboard = UIStoryboard.mainStoryboard()
-                let resultViewController:ResultViewController = storyboard.instantiateViewController()
-                resultViewController.previewImage = img
-                resultViewController.previewText = result.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: " ", with: "")
-                self.present(resultViewController, animated: false, completion: nil)
-            })
-            
+            croppedImage = scaleImage(image: UIImage(cgImage: cgImg!), maxDimension: 640)            
         }
     }
     
-    @IBAction func retake(){
-        //self.dismiss(animated: true, completion: nil)
-    }
     
     func frameForImage(image:UIImage, inImageView imageView:UIImageView)->CGRect{
         let imageRatio = image.size.width / image.size.height
@@ -109,5 +97,12 @@ class CropperViewController: UIViewController, UIScrollViewDelegate {
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowResult" {
+            let resultViewController = segue.destination as! ResultViewController
+            resultViewController.image = croppedImage
+        }
     }
 }

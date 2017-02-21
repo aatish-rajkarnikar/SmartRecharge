@@ -14,21 +14,24 @@ class ResultViewController: UIViewController {
     @IBOutlet var previewImageView:UIImageView!
     @IBOutlet var previewTextfield:UITextField!
     
-    var previewImage:UIImage?
-    var previewText:String?
+    var image:UIImage?
+    var text:String?{
+        didSet{
+            previewTextfield.text = text
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        previewImageView.image = previewImage
-        previewTextfield.text = previewText
+        previewImageView.image = image
+        previewTextfield.text = text
+        TesseractManager.performImageRecognition(image!, completion: { (result:String) in
+            print(result)
+            text = result.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: " ", with: "")
+        })
     }
     
     @IBAction func recharge(){
-        sendSMS(recipients: ["90012"], body: previewText!)
-    }
-    
-    @IBAction func rescan(){
-        let cameraViewController:CameraViewController = UIStoryboard.mainStoryboard().instantiateViewController()
-        present(cameraViewController, animated: true, completion: nil)
+        sendSMS(recipients: ["90012"], body: text!)
     }
     
     func sendSMS(recipients:[String],body:String) {
@@ -46,7 +49,6 @@ extension ResultViewController: MFMessageComposeViewControllerDelegate{
         switch result {
         case .cancelled :
             print("message canceled")
-            
         case .failed :
             print("message failed")
             

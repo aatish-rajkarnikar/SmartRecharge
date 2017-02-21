@@ -11,8 +11,6 @@
 		B00CB44F1D9D7FA300174E6F /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00CB44E1D9D7FA300174E6F /* ResultViewController.swift */; };
 		B00CB4511D9E278000174E6F /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00CB4501D9E278000174E6F /* UIStoryboardExtension.swift */; };
 		B00CB4531D9E27E100174E6F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00CB4521D9E27E100174E6F /* UIViewControllerExtension.swift */; };
-		B03B43A61E53591D00F4AAB5 /* ContentPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03B43A51E53591D00F4AAB5 /* ContentPickerViewController.swift */; };
-		B0BA0A8B1E1EB02E002C6B16 /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BA0A8A1E1EB02E002C6B16 /* PagerViewController.swift */; };
 		B0ED900E1D93DF0D005C4A99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED900D1D93DF0D005C4A99 /* AppDelegate.swift */; };
 		B0ED90131D93DF0D005C4A99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0ED90111D93DF0D005C4A99 /* Main.storyboard */; };
 		B0ED90151D93DF0D005C4A99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0ED90141D93DF0D005C4A99 /* Assets.xcassets */; };
@@ -31,8 +29,6 @@
 		B00CB44E1D9D7FA300174E6F /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		B00CB4501D9E278000174E6F /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
 		B00CB4521D9E27E100174E6F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
-		B03B43A51E53591D00F4AAB5 /* ContentPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentPickerViewController.swift; sourceTree = "<group>"; };
-		B0BA0A8A1E1EB02E002C6B16 /* PagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerViewController.swift; sourceTree = "<group>"; };
 		B0ED900A1D93DF0D005C4A99 /* SmartRecharge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartRecharge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0ED900D1D93DF0D005C4A99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0ED90121D93DF0D005C4A99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,8 +101,6 @@
 				B0ED902D1D93E877005C4A99 /* SmartRecharge-Bridging-Header.h */,
 				B00CB4491D9A6D5100174E6F /* CropperViewController.swift */,
 				B00CB44E1D9D7FA300174E6F /* ResultViewController.swift */,
-				B0BA0A8A1E1EB02E002C6B16 /* PagerViewController.swift */,
-				B03B43A51E53591D00F4AAB5 /* ContentPickerViewController.swift */,
 			);
 			path = SmartRecharge;
 			sourceTree = "<group>";
@@ -206,10 +200,8 @@
 			files = (
 				B0ED90281D93E72B005C4A99 /* OCRManager.swift in Sources */,
 				B0ED900E1D93DF0D005C4A99 /* AppDelegate.swift in Sources */,
-				B0BA0A8B1E1EB02E002C6B16 /* PagerViewController.swift in Sources */,
 				B0ED90261D93E59C005C4A99 /* CameraViewController.swift in Sources */,
 				B00CB4511D9E278000174E6F /* UIStoryboardExtension.swift in Sources */,
-				B03B43A61E53591D00F4AAB5 /* ContentPickerViewController.swift in Sources */,
 				B00CB4531D9E27E100174E6F /* UIViewControllerExtension.swift in Sources */,
 				B00CB44A1D9A6D5100174E6F /* CropperViewController.swift in Sources */,
 				B00CB44F1D9D7FA300174E6F /* ResultViewController.swift in Sources */,
