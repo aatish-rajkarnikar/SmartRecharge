@@ -29,6 +29,7 @@ class ResultViewController: UIViewController {
             print(result)
             text = result.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: " ", with: "")
         })
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView(tapGesture:))))
     }
     
     @IBAction func recharge(){
@@ -47,6 +48,10 @@ class ResultViewController: UIViewController {
         messageVC.recipients = recipients
         messageVC.messageComposeDelegate = self
         present(messageVC, animated: true, completion: nil)
+    }
+    
+    func didTappedOnBackgroundView(tapGesture:UITapGestureRecognizer){
+        self.previewTextfield.resignFirstResponder()
     }
 
 }
