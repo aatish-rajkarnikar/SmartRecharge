@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import CoreTelephony
 
 class ResultViewController: UIViewController {
     
@@ -31,7 +32,13 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func recharge(){
-        sendSMS(recipients: ["90012"], body: text!)
+        let phoneInfo = CTTelephonyNetworkInfo()
+        if let carrierName  = phoneInfo.subscriberCellularProvider?.carrierName {
+            if carrierName == "Ncell" {
+                sendSMS(recipients: ["90012"], body: text!)
+            }
+        }
+        
     }
     
     func sendSMS(recipients:[String],body:String) {
@@ -51,11 +58,16 @@ extension ResultViewController: MFMessageComposeViewControllerDelegate{
             print("message canceled")
         case .failed :
             print("message failed")
-            
         case .sent :
             print("message sent")
             
         }
-        controller.dismiss(animated: true, completion: nil)
+        controller.dismiss(animated: true, completion: {completed in
+            if result == .sent{
+                self.performSegue(withIdentifier: "ShowCamera", sender: self)
+            }
+            
+        })
+        
     }
 }
