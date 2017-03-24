@@ -20,8 +20,8 @@ class CropperViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var imageView:UIImageView!
     @IBOutlet var cropAreaView:UIView!{
         didSet{
-            cropAreaView.layer.borderColor = UIColor.red.cgColor
-            cropAreaView.layer.borderWidth = 1.0
+            cropAreaView.layer.borderColor = UIColor(red: 241.0/255, green: 196.0/255, blue: 15.0/255, alpha: 1).cgColor
+            cropAreaView.layer.borderWidth = 4.0
         }
     }
     
@@ -45,7 +45,7 @@ class CropperViewController: UIViewController, UIScrollViewDelegate {
             let scale = 1/scrollView.zoomScale
             let imageFrame = frameForImage(image: image, inImageView: imageView)
             let x = (scrollView.contentOffset.x + cropAreaView.frame.origin.x - imageFrame.origin.x) * scale * factor
-            let y = (scrollView.contentOffset.y + cropAreaView.frame.origin.y - imageFrame.origin.y) * scale * factor
+            let y = (scrollView.contentOffset.y + (cropAreaView.frame.origin.y - scrollView.frame.origin.y) - imageFrame.origin.y) * scale * factor
             
             let visibleRect = CGRect(x: x, y: y, width: cropAreaView.frame.size.width * scale * factor, height: cropAreaView.frame.size.height * scale * factor)
             let cgImg = image.cgImage?.cropping(to: visibleRect)

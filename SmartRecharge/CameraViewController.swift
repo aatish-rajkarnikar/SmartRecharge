@@ -57,7 +57,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         session?.addOutput(imageOutput)
         
         previewLayer = AVCaptureVideoPreviewLayer(session: session!)
-        previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+        previewLayer?.videoGravity = AVLayerVideoGravityResizeAspect
     }
     
     override func viewDidAppear(_ animated: Bool) {
