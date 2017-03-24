@@ -155,7 +155,7 @@
 				TargetAttributes = {
 					B0ED90091D93DF0D005C4A99 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 35XHE3HKJV;
+						DevelopmentTeam = 4XE2P8XZF9;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -322,7 +322,7 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 35XHE3HKJV;
+				DEVELOPMENT_TEAM = 4XE2P8XZF9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -332,7 +332,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lstdc++";
-				PRODUCT_BUNDLE_IDENTIFIER = io.iOSHub.SmartRecharge;
+				PRODUCT_BUNDLE_IDENTIFIER = io.smartrecharge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SmartRecharge/SmartRecharge-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -347,7 +347,7 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 35XHE3HKJV;
+				DEVELOPMENT_TEAM = 4XE2P8XZF9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -357,7 +357,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lstdc++";
-				PRODUCT_BUNDLE_IDENTIFIER = io.iOSHub.SmartRecharge;
+				PRODUCT_BUNDLE_IDENTIFIER = io.smartrecharge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SmartRecharge/SmartRecharge-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
